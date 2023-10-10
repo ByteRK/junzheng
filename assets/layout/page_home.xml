@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1280dp"
+    android:layout_height="720dp"
+    android:background="@mipmap/bg_29">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/homeBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/img_4g_level"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/selector_img_4g_level"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/text_4g_isp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/img_4g_level"
+            android:text="中国移动"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/img_wifi_level"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/img_electicity_level"
+            android:src="@drawable/selector_img_wifi_level"/>
+
+        <ImageView
+            android:id="@+id/img_electicity_level"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/electricity_full" />
+
+    </RelativeLayout>
+</RelativeLayout>

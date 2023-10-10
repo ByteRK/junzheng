@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="495dp"
+    android:layout_height="235dp"
+    android:layout_gravity="center"
+    android:background="@drawable/frameline_toast_bg_0">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toast_495_235_text"
+        android:textSize="40dp"
+        android:text="toast"
+        android:textColor="#231815"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+</FrameLayout>
