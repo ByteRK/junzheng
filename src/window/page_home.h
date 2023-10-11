@@ -12,7 +12,9 @@ protected:
     ScrollView* mScrollView;   // ScrllView指针
     View* mFirstPage;          // 第一个页面的指针
     View* mSecondPage;         // 第二个页面的指针
-    int mPageHeight = 720;     // 单个页面高度
+
+    int mPageHeight = 720;                    // 单个页面高度
+    int mScrollThreshold = mPageHeight / 20;   // 页面跳动阈值
 
     ImageView* mImg4G;
     ImageView* mImgWifi;

@@ -103,7 +103,7 @@ int HomeWindow::checkScroll(int oldY, int newY, bool needScroll) {
     if (oldY == newY) return -1;
     int diff = newY - oldY;
     if (mIsFirst) {
-        if (diff < -mPageHeight / 3) {
+        if (diff < -mScrollThreshold) {
             if (needScroll) mScrollTo(mPageHeight);
             return 1;
         } else {
@@ -111,7 +111,7 @@ int HomeWindow::checkScroll(int oldY, int newY, bool needScroll) {
             return 0;
         }
     } else {
-        if (diff > mPageHeight / 3) {
+        if (diff > mScrollThreshold) {
             if (needScroll) mScrollTo(0);
             return 0;
         } else {
@@ -124,13 +124,13 @@ int HomeWindow::checkScroll(int oldY, int newY, bool needScroll) {
 void HomeWindow::setNextLastImg(int oldY, int newY) {
     int diff = newY - oldY;
     if (mIsFirst) {
-        if (diff < -mPageHeight / 3) {
+        if (diff < -mScrollThreshold) {
             setNextLastImg(false, true);
         } else {
             setNextLastImg(true, true);
         }
     } else {
-        if (diff > mPageHeight / 3) {
+        if (diff > mScrollThreshold) {
             setNextLastImg(true, true);
         } else {
             setNextLastImg(false, true);
