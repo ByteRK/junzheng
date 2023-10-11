@@ -1,109 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="1280dp"
-    android:layout_height="720dp"
-    android:paddingTop="80dp"
-    android:paddingLeft="150dp"
-    android:paddingRight="60dp"
-    android:paddingBottom="150dp"
-    android:orientation="horizontal">
+    android:layout_height="720dp">
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:paddingTop="55dp"
-        android:gravity="left"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="6dp"
-            android:background="@drawable/bar"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
-            android:text="欢迎回家"
-            android:textColor="#FFFFFF"
-            android:textSize="55sp" />
-
-        <TextView
-            android:id="@+id/weather"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10月8日 多云 19~23"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <AnalogClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="58dp"
-            android:dial="@mipmap/dial"
-            android:hand_hour="@mipmap/hour"
-            android:hand_minute="@mipmap/minute"
-            android:hand_second="@mipmap/second"/>
-
-    </LinearLayout>
-
-
-    <GridLayout
-        android:id="@+id/gridLayout_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="80dp"
-        android:columnCount="4">
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true">
+<!--        时钟天气-->
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="55dp"
+            android:paddingBottom="30dp"
+            android:gravity="left"
+            android:orientation="vertical">
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_1"
-            android:drawableTop="@mipmap/menu_01"
-            android:text="视频监控"/>
+            <View
+                android:layout_width="100dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bar"/>
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_2"
-            android:drawableTop="@mipmap/menu_02"
-            android:text="设备管理"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:text="欢迎回家"
+                android:textColor="#FFFFFF"
+                android:textSize="55sp" />
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_3"
-            android:drawableTop="@mipmap/menu_03"
-            android:text="场景管理"/>
+            <TextView
+                android:id="@+id/weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10月8日 多云 19~23"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_4"
-            android:drawableTop="@mipmap/menu_04"
-            android:text="报警信息"/>
+            <AnalogClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:dial="@mipmap/dial"
+                android:hand_hour="@mipmap/hour"
+                android:hand_minute="@mipmap/minute"
+                android:hand_second="@mipmap/second"/>
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_5"
-            android:drawableTop="@drawable/selector_menu_05"
-            android:text="外出布防"/>
+        </LinearLayout>
+<!--        面板-->
+        <GridLayout
+            android:id="@+id/gridLayout_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:columnCount="4">
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_6"
-            android:drawableTop="@drawable/selector_menu_06"
-            android:text="在家布防"/>
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_1"
+                android:drawableTop="@mipmap/menu_01"
+                android:text="视频监控"/>
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_7"
-            android:drawableTop="@drawable/selector_menu_07"
-            android:text="系统撤防"/>
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_2"
+                android:drawableTop="@mipmap/menu_02"
+                android:text="设备管理"/>
 
-        <TextView
-            style="@style/grid"
-            android:id="@+id/main_func_8"
-            android:drawableTop="@drawable/selector_menu_08"
-            android:text="紧急求助"/>
-    </GridLayout>
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_3"
+                android:drawableTop="@mipmap/menu_03"
+                android:text="场景管理"/>
 
-</LinearLayout>
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_4"
+                android:drawableTop="@mipmap/menu_04"
+                android:text="报警信息"/>
+
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_5"
+                android:drawableTop="@drawable/selector_menu_05"
+                android:text="外出布防"/>
+
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_6"
+                android:drawableTop="@drawable/selector_menu_06"
+                android:text="在家布防"/>
+
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_7"
+                android:drawableTop="@drawable/selector_menu_07"
+                android:text="系统撤防"/>
+
+            <TextView
+                style="@style/grid"
+                android:id="@+id/main_func_8"
+                android:drawableTop="@drawable/selector_menu_08"
+                android:text="紧急求助"/>
+        </GridLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/nextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:src="@mipmap/next_page"/>
+</RelativeLayout>

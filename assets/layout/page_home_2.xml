@@ -50,4 +50,11 @@
             android:text="其它"/>
     </GridLayout>
 
+    <ImageView
+        android:id="@+id/nextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/last_page"/>
 </RelativeLayout>

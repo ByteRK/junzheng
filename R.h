@@ -22,16 +22,17 @@ namespace R{
          static constexpr int main_func_6             = 0x0000271D ;/*10013*/
          static constexpr int main_func_7             = 0x0000271E ;/*10014*/
          static constexpr int main_func_8             = 0x0000271F ;/*10015*/
-         static constexpr int gridLayout_2            = 0x00002720 ;/*10016*/
-         static constexpr int main2_func_1            = 0x00002721 ;/*10017*/
-         static constexpr int main2_func_2            = 0x00002722 ;/*10018*/
-         static constexpr int main2_func_3            = 0x00002723 ;/*10019*/
-         static constexpr int main2_func_4            = 0x00002724 ;/*10020*/
-         static constexpr int main2_func_5            = 0x00002725 ;/*10021*/
-         static constexpr int main2_func_6            = 0x00002726 ;/*10022*/
-         static constexpr int main2_func_7            = 0x00002727 ;/*10023*/
-         static constexpr int main2_func_8            = 0x00002728 ;/*10024*/
-         static constexpr int toast_495_235_text      = 0x00002729 ;/*10025*/
+         static constexpr int nextPage                = 0x00002720 ;/*10016*/
+         static constexpr int gridLayout_2            = 0x00002721 ;/*10017*/
+         static constexpr int main2_func_1            = 0x00002722 ;/*10018*/
+         static constexpr int main2_func_2            = 0x00002723 ;/*10019*/
+         static constexpr int main2_func_3            = 0x00002724 ;/*10020*/
+         static constexpr int main2_func_4            = 0x00002725 ;/*10021*/
+         static constexpr int main2_func_5            = 0x00002726 ;/*10022*/
+         static constexpr int main2_func_6            = 0x00002727 ;/*10023*/
+         static constexpr int main2_func_7            = 0x00002728 ;/*10024*/
+         static constexpr int main2_func_8            = 0x00002729 ;/*10025*/
+         static constexpr int toast_495_235_text      = 0x0000272A ;/*10026*/
     };/*namespace id*/
 
     namespace strings{

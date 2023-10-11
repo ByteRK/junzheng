@@ -16,15 +16,16 @@
   <id name="main_func_6">0x0000271d</id>
   <id name="main_func_7">0x0000271e</id>
   <id name="main_func_8">0x0000271f</id>
-  <id name="gridLayout_2">0x00002720</id>
-  <id name="main2_func_1">0x00002721</id>
-  <id name="main2_func_2">0x00002722</id>
-  <id name="main2_func_3">0x00002723</id>
-  <id name="main2_func_4">0x00002724</id>
-  <id name="main2_func_5">0x00002725</id>
-  <id name="main2_func_6">0x00002726</id>
-  <id name="main2_func_7">0x00002727</id>
-  <id name="main2_func_8">0x00002728</id>
-  <id name="toast_495_235_text">0x00002729</id>
+  <id name="nextPage">0x00002720</id>
+  <id name="gridLayout_2">0x00002721</id>
+  <id name="main2_func_1">0x00002722</id>
+  <id name="main2_func_2">0x00002723</id>
+  <id name="main2_func_3">0x00002724</id>
+  <id name="main2_func_4">0x00002725</id>
+  <id name="main2_func_5">0x00002726</id>
+  <id name="main2_func_6">0x00002727</id>
+  <id name="main2_func_7">0x00002728</id>
+  <id name="main2_func_8">0x00002729</id>
+  <id name="toast_495_235_text">0x0000272a</id>
 </resources>
 
