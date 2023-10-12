@@ -60,16 +60,33 @@ void HomeWindow::btClick(View& v) {
     switch (v.getId()) {
     case junzheng::R::id::main_func_1:
     case junzheng::R::id::main_func_2:
-    case junzheng::R::id::main_func_3:
+        toastTips1Helper(this->getContext(), "暂时不支持此功能");
+        break;
+    case junzheng::R::id::main_func_3: {
+        ChangJingWindow* w = new ChangJingWindow();
+        break;}
     case junzheng::R::id::main_func_4:
         toastTips1Helper(this->getContext(), "暂时不支持此功能");
-        /* code */
         break;
     case junzheng::R::id::main_func_5:
     case junzheng::R::id::main_func_6:
     case junzheng::R::id::main_func_7:
     case junzheng::R::id::main_func_8:
         v.setActivated(!v.isActivated());
+        break;
+
+
+    case junzheng::R::id::main2_func_1: {
+        SettingWindow* w = new SettingWindow();
+        break;}
+    case junzheng::R::id::main2_func_2:
+    case junzheng::R::id::main2_func_3:
+    case junzheng::R::id::main2_func_4:
+    case junzheng::R::id::main2_func_5:
+    case junzheng::R::id::main2_func_6:
+    case junzheng::R::id::main2_func_7:
+    case junzheng::R::id::main2_func_8:
+        toastTips1Helper(this->getContext(), "暂时不支持此功能");
         break;
     default:
         break;

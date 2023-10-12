@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="1280dp"
+    android:layout_height="720dp"
+    android:background="#FFFFFF">
+    <include layout="@layout/mode_setting_tabbar"></include>
+    <LinearLayout
+        android:id="@+id/settingbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/changjing">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_display"
+                android:text="触发场景"/>
+            <Switch style="@style/changjing_switch"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/changjing">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_display"
+                android:text="触发场景"/>
+            <Switch style="@style/changjing_switch"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

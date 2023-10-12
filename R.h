@@ -6,33 +6,44 @@ namespace junzheng{
 
 namespace R{
     namespace id{
-         static constexpr int scrollView              = 0x00002710 ;/*10000*/
-         static constexpr int homeBox                 = 0x00002711 ;/*10001*/
-         static constexpr int img_4g_level            = 0x00002712 ;/*10002*/
-         static constexpr int text_4g_isp             = 0x00002713 ;/*10003*/
-         static constexpr int img_wifi_level          = 0x00002714 ;/*10004*/
-         static constexpr int img_electicity_level    = 0x00002715 ;/*10005*/
-         static constexpr int weather                 = 0x00002716 ;/*10006*/
-         static constexpr int gridLayout_1            = 0x00002717 ;/*10007*/
-         static constexpr int main_func_1             = 0x00002718 ;/*10008*/
-         static constexpr int main_func_2             = 0x00002719 ;/*10009*/
-         static constexpr int main_func_3             = 0x0000271A ;/*10010*/
-         static constexpr int main_func_4             = 0x0000271B ;/*10011*/
-         static constexpr int main_func_5             = 0x0000271C ;/*10012*/
-         static constexpr int main_func_6             = 0x0000271D ;/*10013*/
-         static constexpr int main_func_7             = 0x0000271E ;/*10014*/
-         static constexpr int main_func_8             = 0x0000271F ;/*10015*/
-         static constexpr int nextPage                = 0x00002720 ;/*10016*/
-         static constexpr int gridLayout_2            = 0x00002721 ;/*10017*/
-         static constexpr int main2_func_1            = 0x00002722 ;/*10018*/
-         static constexpr int main2_func_2            = 0x00002723 ;/*10019*/
-         static constexpr int main2_func_3            = 0x00002724 ;/*10020*/
-         static constexpr int main2_func_4            = 0x00002725 ;/*10021*/
-         static constexpr int main2_func_5            = 0x00002726 ;/*10022*/
-         static constexpr int main2_func_6            = 0x00002727 ;/*10023*/
-         static constexpr int main2_func_7            = 0x00002728 ;/*10024*/
-         static constexpr int main2_func_8            = 0x00002729 ;/*10025*/
-         static constexpr int toast_495_235_text      = 0x0000272A ;/*10026*/
+         static constexpr int topbar                  = 0x00002710 ;/*10000*/
+         static constexpr int leftText                = 0x00002711 ;/*10001*/
+         static constexpr int title                   = 0x00002712 ;/*10002*/
+         static constexpr int rightText               = 0x00002713 ;/*10003*/
+         static constexpr int relativeLayout          = 0x00002714 ;/*10004*/
+         static constexpr int settingbox              = 0x00002715 ;/*10005*/
+         static constexpr int scrollView              = 0x00002716 ;/*10006*/
+         static constexpr int homeBox                 = 0x00002717 ;/*10007*/
+         static constexpr int img_4g_level            = 0x00002718 ;/*10008*/
+         static constexpr int text_4g_isp             = 0x00002719 ;/*10009*/
+         static constexpr int img_wifi_level          = 0x0000271A ;/*10010*/
+         static constexpr int img_electicity_level    = 0x0000271B ;/*10011*/
+         static constexpr int weather                 = 0x0000271C ;/*10012*/
+         static constexpr int gridLayout_1            = 0x0000271D ;/*10013*/
+         static constexpr int main_func_1             = 0x0000271E ;/*10014*/
+         static constexpr int main_func_2             = 0x0000271F ;/*10015*/
+         static constexpr int main_func_3             = 0x00002720 ;/*10016*/
+         static constexpr int main_func_4             = 0x00002721 ;/*10017*/
+         static constexpr int main_func_5             = 0x00002722 ;/*10018*/
+         static constexpr int main_func_6             = 0x00002723 ;/*10019*/
+         static constexpr int main_func_7             = 0x00002724 ;/*10020*/
+         static constexpr int main_func_8             = 0x00002725 ;/*10021*/
+         static constexpr int nextPage                = 0x00002726 ;/*10022*/
+         static constexpr int gridLayout_2            = 0x00002727 ;/*10023*/
+         static constexpr int main2_func_1            = 0x00002728 ;/*10024*/
+         static constexpr int main2_func_2            = 0x00002729 ;/*10025*/
+         static constexpr int main2_func_3            = 0x0000272A ;/*10026*/
+         static constexpr int main2_func_4            = 0x0000272B ;/*10027*/
+         static constexpr int main2_func_5            = 0x0000272C ;/*10028*/
+         static constexpr int main2_func_6            = 0x0000272D ;/*10029*/
+         static constexpr int main2_func_7            = 0x0000272E ;/*10030*/
+         static constexpr int main2_func_8            = 0x0000272F ;/*10031*/
+         static constexpr int light                   = 0x00002730 ;/*10032*/
+         static constexpr int day                     = 0x00002731 ;/*10033*/
+         static constexpr int volume                  = 0x00002732 ;/*10034*/
+         static constexpr int lan                     = 0x00002733 ;/*10035*/
+         static constexpr int reset                   = 0x00002734 ;/*10036*/
+         static constexpr int toast_495_235_text      = 0x00002735 ;/*10037*/
     };/*namespace id*/
 
     namespace strings{

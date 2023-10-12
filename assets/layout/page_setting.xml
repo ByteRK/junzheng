@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="1280dp"
+    android:layout_height="720dp"
+    android:background="#FFFFFF">
+    <include layout="@layout/mode_setting_tabbar"></include>
+
+    <LinearLayout
+        android:id="@+id/settingbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/setting"
+            android:id="@+id/light">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_display"
+                android:text="显示与亮度"/>
+            <ImageView style="@style/setting_right"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/setting"
+            android:id="@+id/day">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_time"
+                android:text="时间和日期"/>
+            <ImageView style="@style/setting_right"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/setting"
+            android:id="@+id/volume">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_sound"
+                android:text="音量调节"/>
+            <ImageView style="@style/setting_right"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/setting"
+            android:id="@+id/lan">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/guojihua"
+                android:text="语言"/>
+            <ImageView style="@style/setting_right"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/setting"
+            android:id="@+id/reset">
+            <TextView style="@style/setting_left"
+                android:drawableLeft="@mipmap/ic_reset"
+                android:text="恢复出厂设置"/>
+            <ImageView style="@style/setting_right"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

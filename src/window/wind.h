@@ -5,6 +5,9 @@
 #include <cdroid.h>
 #include <R.h>
 
+#include <page_setting.h>
+#include <page_changjing.h>
+
 
 static void toastTips1Helper(Context* context, std::string text, int size = 20, int color = 0) {
     LayoutInflater* inflater = LayoutInflater::from(context);
