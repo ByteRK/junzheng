@@ -4,10 +4,7 @@
     android:layout_width="1280dp"
     android:layout_height="720dp"
     android:background="@color/setting_background">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="90dp">
+    <RelativeLayout style="@style/page_setting_box">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"

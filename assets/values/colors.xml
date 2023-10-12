@@ -3,6 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="setting_background">#E1E1E2</color>
+    <color name="setting_background">#F5F5F6</color>
     <color name="topbar_background">#000000</color>
 </resources>

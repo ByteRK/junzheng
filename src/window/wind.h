@@ -21,4 +21,25 @@ static void toastTips1Helper(Context* context, std::string text, int size = 20, 
     (new Toast(context))->setView(vg).setDuration(1000).show();
 }
 
+
+static void toastTips(ViewGroup* vg, std::string text, int size = 20, int color = 0, int bgcolor = 0) {
+    LayoutInflater* inflater = LayoutInflater::from(vg->getContext());
+
+    View* v = inflater->inflate("@layout/toast_layout", nullptr);
+    if (bgcolor) v->setBackgroundColor(bgcolor);
+
+    TextView* tv = (TextView*)v->findViewById(junzheng::R::id::toast_text);
+    if (color) tv->setTextColor(color);
+    tv->setTextSize(size);
+    tv->setText(text);
+
+    vg->addView(v);
+    Runnable m;
+    m = [vg, v]() {
+        LOGD("666");
+        vg->removeView(v);
+        };
+    vg->postDelayed(m, 2000);
+}
+
 #endif

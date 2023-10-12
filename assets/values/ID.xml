@@ -32,11 +32,13 @@
   <id name="main2_func_6">0x0000272d</id>
   <id name="main2_func_7">0x0000272e</id>
   <id name="main2_func_8">0x0000272f</id>
-  <id name="light">0x00002730</id>
-  <id name="day">0x00002731</id>
-  <id name="volume">0x00002732</id>
-  <id name="lan">0x00002733</id>
-  <id name="reset">0x00002734</id>
-  <id name="toast_495_235_text">0x00002735</id>
+  <id name="send_mail">0x00002730</id>
+  <id name="light">0x00002731</id>
+  <id name="day">0x00002732</id>
+  <id name="volume">0x00002733</id>
+  <id name="lan">0x00002734</id>
+  <id name="reset">0x00002735</id>
+  <id name="toast_text">0x00002736</id>
+  <id name="toast_495_235_text">0x00002737</id>
 </resources>
 

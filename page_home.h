@@ -9,6 +9,7 @@ class HomeWindow :public Window {
 protected:
     Runnable changeLevel;
 
+    RelativeLayout* mPage;
     ScrollView* mScrollView;   // ScrllView指针
     View* mFirstPage;          // 第一个页面的指针
     View* mSecondPage;         // 第二个页面的指针

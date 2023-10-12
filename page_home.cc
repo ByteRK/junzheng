@@ -1,7 +1,7 @@
 #include <page_home.h>
 
 HomeWindow::HomeWindow() :Window(0, 0, -1, -1) {
-    LayoutInflater::from(getContext())->inflate("@layout/page_home", this);
+    mPage = (RelativeLayout*)LayoutInflater::from(getContext())->inflate("@layout/page_home", this);
     init();
 }
 
@@ -59,7 +59,7 @@ void HomeWindow::btClick(View& v) {
     LOGD("You Click:%d", v.getId());
     switch (v.getId()) {
     case junzheng::R::id::main_func_1:
-        toastTips1Helper(this->getContext(), "暂时不支持此功能");
+        toastTips(mPage, "暂时不支持此功能");
         break;
     case junzheng::R::id::main_func_2:{
         JiaJuWindow* w = new JiaJuWindow();
@@ -68,7 +68,7 @@ void HomeWindow::btClick(View& v) {
         ChangJingWindow* w = new ChangJingWindow();
         break;}
     case junzheng::R::id::main_func_4:
-        toastTips1Helper(this->getContext(), "暂时不支持此功能");
+        toastTips(mPage, "暂时不支持此功能");
         break;
     case junzheng::R::id::main_func_5:
     case junzheng::R::id::main_func_6:
@@ -90,7 +90,7 @@ void HomeWindow::btClick(View& v) {
     case junzheng::R::id::main2_func_6:
     case junzheng::R::id::main2_func_7:
     case junzheng::R::id::main2_func_8:
-        toastTips1Helper(this->getContext(), "暂时不支持此功能");
+        toastTips(mPage, "暂时不支持此功能");
         break;
     default:
         break;

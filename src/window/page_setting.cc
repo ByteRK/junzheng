@@ -21,6 +21,7 @@ void SettingWindow::getView() {
     auto ClickListener = std::bind(&SettingWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理
+    ((TextView*)findViewById(junzheng::R::id::title))->setText("设置"); 
     ((TextView*)findViewById(junzheng::R::id::rightText))->setText(""); 
 
     // 点击监听
@@ -43,6 +44,7 @@ void SettingWindow::btClick(View& v) {
         this->close();
         break;
     default:
+        toastTips(mPage,"暂时不支持设置该选项");
         break;
     }
 }

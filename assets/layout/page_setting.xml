@@ -5,18 +5,15 @@
     android:layout_height="720dp"
     android:background="@color/setting_background">
 
-    <LinearLayout
+    <LinearLayout style="@style/page_setting_box"
         android:id="@+id/settingbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
         android:orientation="vertical">
 
         <RelativeLayout style="@style/setting"
             android:id="@+id/light">
             <TextView style="@style/setting_left"
                 android:drawableLeft="@mipmap/ic_display"
-                android:text="显示与亮度"/>
+                android:text=" 显示与亮度"/>
             <ImageView style="@style/setting_right"/>
         </RelativeLayout>
 
@@ -24,7 +21,7 @@
             android:id="@+id/day">
             <TextView style="@style/setting_left"
                 android:drawableLeft="@mipmap/ic_time"
-                android:text="时间和日期"/>
+                android:text="  时间和日期"/>
             <ImageView style="@style/setting_right"/>
         </RelativeLayout>
 
@@ -32,7 +29,7 @@
             android:id="@+id/volume">
             <TextView style="@style/setting_left"
                 android:drawableLeft="@mipmap/ic_sound"
-                android:text="音量调节"/>
+                android:text="  音量调节"/>
             <ImageView style="@style/setting_right"/>
         </RelativeLayout>
 
@@ -40,7 +37,7 @@
             android:id="@+id/lan">
             <TextView style="@style/setting_left"
                 android:drawableLeft="@mipmap/guojihua"
-                android:text="语言"/>
+                android:text="  语言"/>
             <ImageView style="@style/setting_right"/>
         </RelativeLayout>
 
@@ -48,11 +45,11 @@
             android:id="@+id/reset">
             <TextView style="@style/setting_left"
                 android:drawableLeft="@mipmap/ic_reset"
-                android:text="恢复出厂设置"/>
+                android:text="  恢复出厂设置"/>
             <ImageView style="@style/setting_right"/>
         </RelativeLayout>
 
     </LinearLayout>
-    
+
     <include layout="@layout/mode_setting_tabbar"></include>
 </RelativeLayout>

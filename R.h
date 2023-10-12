@@ -38,12 +38,14 @@ namespace R{
          static constexpr int main2_func_6            = 0x0000272D ;/*10029*/
          static constexpr int main2_func_7            = 0x0000272E ;/*10030*/
          static constexpr int main2_func_8            = 0x0000272F ;/*10031*/
-         static constexpr int light                   = 0x00002730 ;/*10032*/
-         static constexpr int day                     = 0x00002731 ;/*10033*/
-         static constexpr int volume                  = 0x00002732 ;/*10034*/
-         static constexpr int lan                     = 0x00002733 ;/*10035*/
-         static constexpr int reset                   = 0x00002734 ;/*10036*/
-         static constexpr int toast_495_235_text      = 0x00002735 ;/*10037*/
+         static constexpr int send_mail               = 0x00002730 ;/*10032*/
+         static constexpr int light                   = 0x00002731 ;/*10033*/
+         static constexpr int day                     = 0x00002732 ;/*10034*/
+         static constexpr int volume                  = 0x00002733 ;/*10035*/
+         static constexpr int lan                     = 0x00002734 ;/*10036*/
+         static constexpr int reset                   = 0x00002735 ;/*10037*/
+         static constexpr int toast_text              = 0x00002736 ;/*10038*/
+         static constexpr int toast_495_235_text      = 0x00002737 ;/*10039*/
     };/*namespace id*/
 
     namespace strings{

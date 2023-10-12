@@ -25,6 +25,7 @@ void MailWindow::getView() {
 
     // 点击监听
     findViewById(junzheng::R::id::leftText)->setOnClickListener(ClickListener);
+    findViewById(junzheng::R::id::send_mail)->setOnClickListener(ClickListener);
 }
 
 void MailWindow::autoRun() {
@@ -38,6 +39,7 @@ void MailWindow::btClick(View& v) {
         this->close();
         break;
     default:
+        toastTips(mPage,"暂时不支持该选项");
         break;
     }
 }

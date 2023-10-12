@@ -5,7 +5,7 @@
         <item name="android:layout_height">140dp</item>
         <item name="android:layout_marginRight">25dp</item>
         <item name="android:layout_marginTop">25dp</item>
-        <item name="android:background">#88888888</item>
+        <item name="android:background">#88DCE2E8</item>
         <item name="android:gravity">center_horizontal|bottom</item>
         <item name="android:paddingTop">25dp</item>
         <item name="android:paddingBottom">15dp</item>
@@ -16,7 +16,7 @@
         <item name="android:layout_width">240dp</item>
         <item name="android:layout_height">180dp</item>
         <item name="android:layout_margin">25dp</item>
-        <item name="android:background">#88888888</item>
+        <item name="android:background">#88DCE2E8</item>
         <item name="android:gravity">center_horizontal|bottom</item>
         <item name="android:paddingTop">25dp</item>
         <item name="android:paddingBottom">15dp</item>
@@ -24,10 +24,17 @@
         <item name="android:textSize">25sp</item>
     </style>
 
+<!--     页面容器-->
+    <style name="page_setting_box">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">60dp</item>
+    </style>
+
 <!--    设置界面-->
     <style name="setting">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_height">70dp</item>
         <item name="background">@drawable/click_backgroud</item>
     </style>
     <style name="setting_left">
@@ -37,7 +44,7 @@
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">#000000</item>
     </style>
     <style name="setting_right">
@@ -49,10 +56,10 @@
         <item name="android:src">@mipmap/all_next_gary</item>
     </style>
 
-<!--    场景 -->
+    <!--    场景 -->
     <style name="changjing">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_height">80dp</item>
         <item name="background">@drawable/click_backgroud</item>
     </style>
     <style name="changjing_switch">
@@ -62,14 +69,14 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:clickable">true</item>
-        <item name="android:thumb">@drawable/switch_thumb</item>
-        <item name="android:track">@drawable/switch_track</item>
+        <item name="android:thumb">@drawable/switch_thumb_60</item>
+        <item name="android:track">@drawable/switch_track_60</item>
     </style>
 
-<!--     邮箱 -->
+    <!--     邮箱 -->
     <style name="mail">
         <item name="android:layout_width">900dp</item>
-        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_height">50dp</item>
     </style>
     <style name="mail_left">
         <item name="android:layout_width">wrap_content</item>
@@ -78,19 +85,31 @@
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_marginLeft">50dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">#000000</item>
     </style>
+    <style name="mail_switch">
+        <item name="android:layout_width">84dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:thumb">@drawable/switch_thumb_42</item>
+        <item name="android:track">@drawable/switch_track_42</item>
+    </style>
     <style name="mail_right">
-        <item name="android:layout_width">400dp</item>
-        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_width">360dp</item>
+        <item name="android:layout_height">42dp</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:background">@drawable/input_background</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:gravity">center_vertical|left</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">#000000</item>
     </style>
+
+
 </resources>

@@ -2,29 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/topbar"
     android:layout_width="1280dp"
-    android:layout_height="90dp"
+    android:layout_height="60dp"
     android:background="@color/topbar_background">
     <TextView
         android:id="@+id/leftText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:paddingBottom="10dp"
         android:drawableLeft="@mipmap/all_back"
         android:gravity="center"
         android:text="返回"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"/>
+        android:textColor="@color/text_white"
+        android:textSize="25sp"/>
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:paddingBottom="10dp"
-        android:text="设置"
-        android:textSize="32sp"
-        />
+        android:text="返回"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
     <TextView
         android:id="@+id/rightText"
         android:layout_width="wrap_content"
@@ -32,9 +30,8 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="30dp"
-        android:paddingBottom="10dp"
         android:text="返回"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"/>
+        android:textColor="@color/text_white"
+        android:textSize="25sp"/>
 
 </RelativeLayout>
