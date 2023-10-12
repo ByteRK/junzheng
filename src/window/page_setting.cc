@@ -21,7 +21,7 @@ void SettingWindow::getView() {
     auto ClickListener = std::bind(&SettingWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理
-    ((TextView*)findViewById(junzheng::R::id::rightText))->setText("");
+    ((TextView*)findViewById(junzheng::R::id::rightText))->setText(""); 
 
     // 点击监听
     findViewById(junzheng::R::id::leftText)->setOnClickListener(ClickListener);
