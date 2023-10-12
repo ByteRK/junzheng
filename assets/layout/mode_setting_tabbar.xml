@@ -3,7 +3,7 @@
     android:id="@+id/topbar"
     android:layout_width="1280dp"
     android:layout_height="90dp"
-    android:background="#000000">
+    android:background="@color/topbar_background">
     <TextView
         android:id="@+id/leftText"
         android:layout_width="wrap_content"

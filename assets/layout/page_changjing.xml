@@ -3,8 +3,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="1280dp"
     android:layout_height="720dp"
-    android:background="#FFFFFF">
-    <include layout="@layout/mode_setting_tabbar"></include>
+    android:background="@color/setting_background">
     <LinearLayout
         android:id="@+id/settingbox"
         android:layout_width="match_parent"
@@ -14,17 +13,19 @@
 
         <RelativeLayout style="@style/changjing">
             <TextView style="@style/setting_left"
-                android:drawableLeft="@mipmap/ic_display"
+                android:drawableLeft="@mipmap/scene_icon"
                 android:text="触发场景"/>
-            <Switch style="@style/changjing_switch"/>
+            <Switch style="@style/changjing_switch"
+                />
         </RelativeLayout>
 
         <RelativeLayout style="@style/changjing">
             <TextView style="@style/setting_left"
-                android:drawableLeft="@mipmap/ic_display"
-                android:text="触发场景"/>
+                android:drawableLeft="@mipmap/scene_icon"
+                android:text="定时场景"/>
             <Switch style="@style/changjing_switch"/>
         </RelativeLayout>
-
     </LinearLayout>
+
+    <include layout="@layout/mode_setting_tabbar"></include>
 </RelativeLayout>

@@ -59,9 +59,11 @@ void HomeWindow::btClick(View& v) {
     LOGD("You Click:%d", v.getId());
     switch (v.getId()) {
     case junzheng::R::id::main_func_1:
-    case junzheng::R::id::main_func_2:
         toastTips1Helper(this->getContext(), "暂时不支持此功能");
         break;
+    case junzheng::R::id::main_func_2:{
+        JiaJuWindow* w = new JiaJuWindow();
+        break;}
     case junzheng::R::id::main_func_3: {
         ChangJingWindow* w = new ChangJingWindow();
         break;}
@@ -79,10 +81,12 @@ void HomeWindow::btClick(View& v) {
     case junzheng::R::id::main2_func_1: {
         SettingWindow* w = new SettingWindow();
         break;}
+    case junzheng::R::id::main2_func_5: {
+        MailWindow* w = new MailWindow();
+        break;}
     case junzheng::R::id::main2_func_2:
     case junzheng::R::id::main2_func_3:
     case junzheng::R::id::main2_func_4:
-    case junzheng::R::id::main2_func_5:
     case junzheng::R::id::main2_func_6:
     case junzheng::R::id::main2_func_7:
     case junzheng::R::id::main2_func_8:

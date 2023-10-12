@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="1280dp"
+    android:layout_height="720dp"
+    android:background="@color/setting_background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/settingbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="90dp"
+            android:paddingBottom="90dp"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="使能"/>
+                <Switch style="@style/changjing_switch"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="收件人邮箱"/>
+                <TextView style="@style/mail_right"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="发送人邮箱"/>
+                <TextView style="@style/mail_right"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="邮箱账号"/>
+                <TextView style="@style/mail_right"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="授权密码"/>
+                <TextView style="@style/mail_right"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="服务器地址"/>
+                <TextView style="@style/mail_right"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail">
+                <TextView style="@style/mail_left"
+                    android:text="端口号"/>
+                <TextView style="@style/mail_right"
+                    android:text="0"/>
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/mail"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="发送测试邮件"
+                    android:textSize="22sp"
+                    android:textColor="#FFFFFF"></TextView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/mode_setting_tabbar"></include>
+</RelativeLayout>

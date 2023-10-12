@@ -3,14 +3,13 @@
     android:id="@+id/relativeLayout"
     android:layout_width="1280dp"
     android:layout_height="720dp"
-    android:background="#FFFFFF">
-    <include layout="@layout/mode_setting_tabbar"></include>
+    android:background="@color/setting_background">
 
     <LinearLayout
         android:id="@+id/settingbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:orientation="vertical">
 
         <RelativeLayout style="@style/setting"
@@ -54,4 +53,6 @@
         </RelativeLayout>
 
     </LinearLayout>
+    
+    <include layout="@layout/mode_setting_tabbar"></include>
 </RelativeLayout>

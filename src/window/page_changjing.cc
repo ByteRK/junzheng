@@ -20,7 +20,8 @@ void ChangJingWindow::getView() {
     auto ClickListener = std::bind(&ChangJingWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理
-    ((TextView*)findViewById(junzheng::R::id::rightText))->setText("");
+    ((TextView*)findViewById(junzheng::R::id::title))->setText("场景控制");
+    ((TextView*)findViewById(junzheng::R::id::rightText))->setText("增加");
 
     // 点击监听
     findViewById(junzheng::R::id::leftText)->setOnClickListener(ClickListener);

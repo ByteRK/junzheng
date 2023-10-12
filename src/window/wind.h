@@ -7,6 +7,8 @@
 
 #include <page_setting.h>
 #include <page_changjing.h>
+#include <page_mail.h>
+#include <page_jiaju.h>
 
 
 static void toastTips1Helper(Context* context, std::string text, int size = 20, int color = 0) {
