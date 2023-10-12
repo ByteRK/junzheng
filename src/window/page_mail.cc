@@ -25,6 +25,7 @@ void MailWindow::getView() {
 
     // 点击监听
     findViewById(junzheng::R::id::leftText)->setOnClickListener(ClickListener);
+    findViewById(junzheng::R::id::rightText)->setOnClickListener(ClickListener);
     findViewById(junzheng::R::id::send_mail)->setOnClickListener(ClickListener);
 }
 
