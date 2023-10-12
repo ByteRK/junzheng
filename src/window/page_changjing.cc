@@ -12,11 +12,11 @@ void ChangJingWindow::init() {
     // 插入TabBar
 
     // 处理
-    getView();
+    setView();
     autoRun();
 }
 
-void ChangJingWindow::getView() {
+void ChangJingWindow::setView() {
     auto ClickListener = std::bind(&ChangJingWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理

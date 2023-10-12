@@ -8,18 +8,17 @@ include_directories(
    ./
    ./src/comm
    ./src/window
+   ./src/libs
    ${CDROID_INCLUDE_DIRS}
    ${CDROID_DEPINCLUDES}
    ${CMAKE_BINARY_DIR}/include
    ${CMAKE_BINARY_DIR}/include/gui
    ${CMAKE_BINARY_DIR}/include/porting
-   ${CMAKE_BINARY_DIR}/include/cairo
-   ${CMAKE_BINARY_DIR}/include/epg
-   ${CMAKE_BINARY_DIR}/include/freetype2
 )
 aux_source_directory(./ JZ_SRCS)
 aux_source_directory(./src/comm JZ_SRCS)
 aux_source_directory(./src/window JZ_SRCS)
+aux_source_directory(./src/libs JZ_SRCS)
 add_definitions(--include cdtypes.h)
 add_definitions(--include cdlog.h)
 link_directories(${CMAKE_BINARY_DIR}/lib)

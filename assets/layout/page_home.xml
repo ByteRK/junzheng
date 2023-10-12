@@ -3,17 +3,11 @@
     android:layout_width="1280dp"
     android:layout_height="720dp"
     android:background="@mipmap/bg_29">
-    <ScrollView
+    <VerticalViewPager
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/homeBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </LinearLayout>
-    </ScrollView>
+    </VerticalViewPager>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"

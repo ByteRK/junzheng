@@ -12,11 +12,11 @@ void JiaJuWindow::init() {
     // 插入TabBar
 
     // 处理
-    getView();
+    setView();
     autoRun();
 }
 
-void JiaJuWindow::getView() {
+void JiaJuWindow::setView() {
     auto ClickListener = std::bind(&JiaJuWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理

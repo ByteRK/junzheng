@@ -14,7 +14,7 @@ public:
 private:
     void init();
 
-    void getView();
+    void setView();
     void autoRun();
     void btClick(View& v);
 };

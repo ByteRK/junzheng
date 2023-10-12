@@ -13,11 +13,11 @@ void SettingWindow::init() {
     // 插入TabBar
 
     // 处理
-    getView();
+    setView();
     autoRun();
 }
 
-void SettingWindow::getView() {
+void SettingWindow::setView() {
     auto ClickListener = std::bind(&SettingWindow::btClick, this, std::placeholders::_1);
 
     // 样式处理

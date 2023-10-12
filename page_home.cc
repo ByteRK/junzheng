@@ -11,24 +11,20 @@ HomeWindow::~HomeWindow() {
 
 // 初始化
 void HomeWindow::init() {
-    // 插入主页面
-    LinearLayout* v = (LinearLayout*)findViewById(junzheng::R::id::homeBox);
-    mFirstPage = LayoutInflater::from(getContext())->inflate("@layout/page_home_1", v);
-    mSecondPage = LayoutInflater::from(getContext())->inflate("@layout/page_home_2", v);
-
-    // 处理
-    getView();
+    setView();
     autoRun();
 }
 
 // 获取页面元素指针以及设置界面
-void HomeWindow::getView() {
+void HomeWindow::setView() {
     auto ClickListener = std::bind(&HomeWindow::btClick, this, std::placeholders::_1);
-    auto TouchListener = std::bind(&HomeWindow::scrollTouch, this, std::placeholders::_1, std::placeholders::_2);
 
-    // 监听ScrolView
-    mScrollView = (ScrollView*)findViewById(junzheng::R::id::scrollView);
-    mScrollView->setOnTouchListener(TouchListener);
+    // 配置ViewPage
+    setViewPage();
+
+    // 获取页面
+    mFirstPage = findViewById(junzheng::R::id::home_1);
+    mSecondPage = findViewById(junzheng::R::id::home_2);
 
     // 获取信号指针
     mImg4G = (ImageView*)findViewById(junzheng::R::id::img_4g_level);
@@ -54,6 +50,30 @@ void HomeWindow::getView() {
     }
 }
 
+// 设置ViewPage
+void HomeWindow::setViewPage() {
+    auto ClickListener = std::bind(&HomeWindow::btClick, this, std::placeholders::_1);
+    auto TouchListener = std::bind(&HomeWindow::scrollTouch, this, std::placeholders::_1, std::placeholders::_2);
+
+    // 设置ViewPage
+    mViewPage = (VerticalViewPager*)findViewById(junzheng::R::id::scrollView);
+    MyPageAdapter* gpAdapter = new MyPageAdapter();
+    mViewPage->setOffscreenPageLimit(2);
+    mViewPage->setAdapter(gpAdapter);
+    gpAdapter->notifyDataSetChanged();
+    mViewPage->setCurrentItem(0);
+    mViewPage->setPageTransformer(true, new VerticalPageTransformer);
+
+    // 监听ViewPage
+    mViewPage->setOnTouchListener(TouchListener);
+    ViewPager::OnPageChangeListener vpl;
+    vpl.onPageScrollStateChanged = [this](int state) {
+        if (state == 0)  mIsFirst = (mViewPage->getCurrentItem()) == 0 ? true : false;
+        };
+    mViewPage->setInternalPageChangeListener(vpl);
+}
+
+
 // 点击事件
 void HomeWindow::btClick(View& v) {
     LOGD("You Click:%d", v.getId());
@@ -61,7 +81,7 @@ void HomeWindow::btClick(View& v) {
     case junzheng::R::id::main_func_1:
         toastTips(mPage, "暂时不支持此功能");
         break;
-    case junzheng::R::id::main_func_2:{
+    case junzheng::R::id::main_func_2: {
         JiaJuWindow* w = new JiaJuWindow();
         break;}
     case junzheng::R::id::main_func_3: {
@@ -104,42 +124,11 @@ bool HomeWindow::scrollTouch(View& v, MotionEvent& e) {
     if (status == MotionEvent::ACTION_DOWN) {
         startY = (int)e.getY();
     } else if (status == MotionEvent::ACTION_UP) {
-        checkScroll(startY, (int)e.getY());
         setNextLastImg(false);
-        return true;
     } else if (status == MotionEvent::ACTION_MOVE) {
         setNextLastImg(startY, (int)e.getY());
     }
     return false;
-}
-
-// 页面滑动
-void HomeWindow::mScrollTo(int toY) {
-    mScrollView->scrollTo(0, toY);
-    mIsFirst = toY < mPageHeight ? true : false;
-}
-
-// 判断需要滑动的方向，0=向上，1=向下，-1=不滑动
-int HomeWindow::checkScroll(int oldY, int newY, bool needScroll) {
-    if (oldY == newY) return -1;
-    int diff = newY - oldY;
-    if (mIsFirst) {
-        if (diff < -mScrollThreshold) {
-            if (needScroll) mScrollTo(mPageHeight);
-            return 1;
-        } else {
-            if (needScroll) mScrollTo(0);
-            return 0;
-        }
-    } else {
-        if (diff > mScrollThreshold) {
-            if (needScroll) mScrollTo(0);
-            return 0;
-        } else {
-            if (needScroll) mScrollTo(mPageHeight);
-            return 1;
-        }
-    }
 }
 
 void HomeWindow::setNextLastImg(int oldY, int newY) {
@@ -191,4 +180,23 @@ int HomeWindow::getRandomNumber(int min, int max) {
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distribution(min, max);
     return distribution(gen);
+}
+
+void* MyPageAdapter::instantiateItem(ViewGroup* container, int position) {
+    // LOGD("is %d", position);
+    if (position) {
+        View* v = LayoutInflater::from(container->getContext())->inflate("@layout/page_home_2", nullptr);
+        container->addView(v);
+        return v;
+    } else {
+        View* v = LayoutInflater::from(container->getContext())->inflate("@layout/page_home_1", nullptr);
+        container->addView(v);
+        return v;
+    }
+}
+
+void MyPageAdapter::destroyItem(ViewGroup* container, int position, void* object) {
+    LOGD("第%d个页面被销毁", position);
+    container->removeView((View*)object);
+    delete (View*)object;
 }
