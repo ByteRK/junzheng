@@ -12,7 +12,7 @@ namespace R{
          static constexpr int rightText               = 0x00002713 ;/*10003*/
          static constexpr int relativeLayout          = 0x00002714 ;/*10004*/
          static constexpr int settingbox              = 0x00002715 ;/*10005*/
-         static constexpr int scrollView              = 0x00002716 ;/*10006*/
+         static constexpr int viewPager               = 0x00002716 ;/*10006*/
          static constexpr int img_4g_level            = 0x00002717 ;/*10007*/
          static constexpr int text_4g_isp             = 0x00002718 ;/*10008*/
          static constexpr int img_wifi_level          = 0x00002719 ;/*10009*/

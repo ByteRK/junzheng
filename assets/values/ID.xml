@@ -6,7 +6,7 @@
   <id name="rightText">0x00002713</id>
   <id name="relativeLayout">0x00002714</id>
   <id name="settingbox">0x00002715</id>
-  <id name="scrollView">0x00002716</id>
+  <id name="viewPager">0x00002716</id>
   <id name="img_4g_level">0x00002717</id>
   <id name="text_4g_isp">0x00002718</id>
   <id name="img_wifi_level">0x00002719</id>

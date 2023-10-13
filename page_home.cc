@@ -6,7 +6,7 @@ HomeWindow::HomeWindow() :Window(0, 0, -1, -1) {
 }
 
 HomeWindow::~HomeWindow() {
-    removeCallbacks(changeLevel);
+    removeCallbacks(mRunnable);
 }
 
 // 初始化
@@ -17,7 +17,7 @@ void HomeWindow::init() {
 
 // 获取页面元素指针以及设置界面
 void HomeWindow::setView() {
-    auto ClickListener = std::bind(&HomeWindow::btClick, this, std::placeholders::_1);
+    auto TouchListener = std::bind(&HomeWindow::pageTouch, this, std::placeholders::_1, std::placeholders::_2);
 
     // 配置ViewPage
     setViewPage();
@@ -39,25 +39,24 @@ void HomeWindow::setView() {
 
     // 设置Grid按键监听
     GridLayout* gl = (GridLayout*)findViewById(junzheng::R::id::gridLayout_1);
-    for (int i = 0; i < gl->getChildCount(); i++) {
-        View* v = gl->getChildAt(i);
-        v->setOnClickListener(ClickListener);
-    }
+    for (int i = 0; i < gl->getChildCount(); i++) gl->getChildAt(i)->setOnTouchListener(TouchListener);
+
     gl = (GridLayout*)findViewById(junzheng::R::id::gridLayout_2);
-    for (int i = 0; i < gl->getChildCount(); i++) {
-        View* v = gl->getChildAt(i);
-        v->setOnClickListener(ClickListener);
-    }
+    for (int i = 0; i < gl->getChildCount(); i++) gl->getChildAt(i)->setOnTouchListener(TouchListener);
 }
 
 // 设置ViewPage
 void HomeWindow::setViewPage() {
-    auto ClickListener = std::bind(&HomeWindow::btClick, this, std::placeholders::_1);
-    auto TouchListener = std::bind(&HomeWindow::scrollTouch, this, std::placeholders::_1, std::placeholders::_2);
+    // 定义事件
+    auto TouchListener = std::bind(&HomeWindow::pageTouch, this, std::placeholders::_1, std::placeholders::_2);
+    MyPageAdapter* gpAdapter = new MyPageAdapter();
+    ViewPager::OnPageChangeListener vpListener;
+    vpListener.onPageScrollStateChanged = [this](int state) {
+        if (state == 0)  mIsFirst = (mViewPage->getCurrentItem()) == 0 ? true : false;
+        };
 
     // 设置ViewPage
-    mViewPage = (VerticalViewPager*)findViewById(junzheng::R::id::scrollView);
-    MyPageAdapter* gpAdapter = new MyPageAdapter();
+    mViewPage = (VerticalViewPager*)findViewById(junzheng::R::id::viewPager);
     mViewPage->setOffscreenPageLimit(2);
     mViewPage->setAdapter(gpAdapter);
     gpAdapter->notifyDataSetChanged();
@@ -66,27 +65,21 @@ void HomeWindow::setViewPage() {
 
     // 监听ViewPage
     mViewPage->setOnTouchListener(TouchListener);
-    ViewPager::OnPageChangeListener vpl;
-    vpl.onPageScrollStateChanged = [this](int state) {
-        if (state == 0)  mIsFirst = (mViewPage->getCurrentItem()) == 0 ? true : false;
-        };
-    mViewPage->setInternalPageChangeListener(vpl);
+    mViewPage->setInternalPageChangeListener(vpListener);
 }
 
 
-// 点击事件
-void HomeWindow::btClick(View& v) {
-    LOGD("You Click:%d", v.getId());
-    switch (v.getId()) {
-    case junzheng::R::id::main_func_1:
-        toastTips(mPage, "暂时不支持此功能");
-        break;
+// Grid按键点击事件
+void HomeWindow::btClick(View* v) {
+    LOGD("You Click:%d", v->getId());
+    switch (v->getId()) {
     case junzheng::R::id::main_func_2: {
         JiaJuWindow* w = new JiaJuWindow();
         break;}
     case junzheng::R::id::main_func_3: {
         ChangJingWindow* w = new ChangJingWindow();
         break;}
+    case junzheng::R::id::main_func_1:
     case junzheng::R::id::main_func_4:
         toastTips(mPage, "暂时不支持此功能");
         break;
@@ -94,7 +87,7 @@ void HomeWindow::btClick(View& v) {
     case junzheng::R::id::main_func_6:
     case junzheng::R::id::main_func_7:
     case junzheng::R::id::main_func_8:
-        v.setActivated(!v.isActivated());
+        v->setActivated(!v->isActivated());
         break;
 
 
@@ -117,16 +110,34 @@ void HomeWindow::btClick(View& v) {
     }
 }
 
-// 页面滑动监听
-bool HomeWindow::scrollTouch(View& v, MotionEvent& e) {
-    static int startY;
+// 页面触摸监听
+bool HomeWindow::pageTouch(View& v, MotionEvent& e) {
     int32_t status = e.getAction();
-    if (status == MotionEvent::ACTION_DOWN) {
-        startY = (int)e.getY();
-    } else if (status == MotionEvent::ACTION_UP) {
-        setNextLastImg(false);
-    } else if (status == MotionEvent::ACTION_MOVE) {
-        setNextLastImg(startY, (int)e.getY());
+    static View* btn = nullptr;
+
+    switch (v.getId()) {
+
+    case junzheng::R::id::viewPager:
+        // PageView
+        static int startX;
+        static int startY;
+        if (status == MotionEvent::ACTION_DOWN) {
+            startY = (int)e.getY();
+            startX = (int)e.getX();
+        } else if (status == MotionEvent::ACTION_UP) {
+            setNextLastImg(false);
+            if (btn != nullptr) btClick(btn);
+            btn = nullptr;
+        } else if (status == MotionEvent::ACTION_MOVE) {
+            if (btn != nullptr && (std::abs(startY - (int)e.getY()) > 30 || std::abs(startX - (int)e.getX()) > 30)) btn = nullptr;
+            setNextLastImg(startY, (int)e.getY());
+        }
+        break;
+
+    default:
+        // 其它
+        btn = &v;
+        break;
     }
     return false;
 }
@@ -150,7 +161,6 @@ void HomeWindow::setNextLastImg(int oldY, int newY) {
 
 // 设置上下滑动标识可见性
 void HomeWindow::setNextLastImg(bool status, bool select) {
-    mIsScroll = !select ? status : mIsScroll;
     if (!select) {
         // 同时设置相同状态
         mDownImg->setVisibility(status ? View::VISIBLE : View::INVISIBLE);
@@ -164,14 +174,14 @@ void HomeWindow::setNextLastImg(bool status, bool select) {
 
 // 自动运行的函数
 void HomeWindow::autoRun() {
-    changeLevel = [this]() {
+    mRunnable = [this]() {
         mImg4G->setImageLevel(getRandomNumber(0, 5));
         mImg4G->invalidate();
         mImgWifi->setImageLevel(getRandomNumber(0, 4));
         mImgWifi->invalidate();
-        this->postDelayed(changeLevel, 2000);
+        this->postDelayed(mRunnable, 2000);
         };
-    this->post(changeLevel);
+    this->post(mRunnable);
 }
 
 // 获取随机数
@@ -183,7 +193,6 @@ int HomeWindow::getRandomNumber(int min, int max) {
 }
 
 void* MyPageAdapter::instantiateItem(ViewGroup* container, int position) {
-    // LOGD("is %d", position);
     if (position) {
         View* v = LayoutInflater::from(container->getContext())->inflate("@layout/page_home_2", nullptr);
         container->addView(v);

@@ -18,12 +18,13 @@ public:
 
 class HomeWindow :public Window {
 protected:
-    Runnable changeLevel;
+    Runnable mRunnable;
 
-    RelativeLayout* mPage;
+    RelativeLayout* mPage;         // 页面指针
     VerticalViewPager* mViewPage;  // ViewPage指针
     View* mFirstPage;              // 第一个页面的指针
     View* mSecondPage;             // 第二个页面的指针
+    bool mIsFirst = true;          // 当前是否首页
 
     int mPageHeight = 720;                    // 单个页面高度
     int mScrollThreshold = mPageHeight / 3;   // 页面跳动阈值
@@ -33,22 +34,19 @@ protected:
     ImageView* mDownImg;
     ImageView* mUpImg;
 
-    bool mIsFirst = true;
-    bool mIsScroll = false;
-    bool mActionUp = false;
 public:
     HomeWindow();
     ~HomeWindow();
 private:
     void init();
     void setView();
-    void setViewPage();
-    void btClick(View& v);
-    bool scrollTouch(View& v, MotionEvent& e);
+    void setViewPage();                                                // 设置ViewPage
+    void btClick(View* v);                                             // Grid按键点击事件
+    bool pageTouch(View& v, MotionEvent& e);                           // 页面触摸监听
 
     // 滑动相关
-    void setNextLastImg(int oldY, int newY);                             // 根据滑动范围显示滑动标识
-    void setNextLastImg(bool status, bool select = false);               // 设置上下滑动标识可见性
+    void setNextLastImg(int oldY, int newY);                           // 根据滑动范围显示滑动标识
+    void setNextLastImg(bool status, bool select = false);             // 设置上下滑动标识可见性
 
     void autoRun();
     int getRandomNumber(int min, int max);
